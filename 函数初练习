@@ -1,0 +1,116 @@
+#问题1
+def count_divisible_digits(n, m):
+    '返回n中可被m整除的位数'
+
+    count = 0
+    if m<=0 or m > 9:
+            print("除数不在范围内")
+            return 0
+    else:
+        str_n = str(n)
+        for i in str_n:
+            if int(i) % m == 0:
+                count += 1
+        return count
+count_divisible_digits(650899,3)
+4
+#问题2
+def is_relative_prinme(m,n):
+    '判断两个整数是否为相对质数'
+    
+    if m>=1 and n>=1:
+        yinzi_m=''
+        yinzi_n=''
+        for i in range(1,m+1):
+            if m%i==0:
+                yinzi_m=yinzi_m+str(i)
+        for i in range(1,n+1):
+            if n%i==0:
+                yinzi_n=yinzi_n+str(i)
+        yinzi_m=yinzi_m[1:]
+        yinzi_n=yinzi_n[1:]
+        print(yinzi_m)
+        print(yinzi_n)
+        
+        if len(yinzi_m)>len(yinzi_n):
+            return not yinzi_m in yinzi_n
+        else: 
+            return not yinzi_n in yinzi_m
+  is_relative_prinme(12,13)
+234612
+13
+True
+#问题3
+def travel(dr,x,y):
+    '从起始位置到终止位置'
+    
+    str_dr=str(dr)
+    for i in str_dr :
+        if i=='E'or i=='e':
+            x+=1
+            print(i,(x,y))
+        elif i=='W'or i=='w':
+            x-=1
+            print(i,(x,y))    
+        elif i=='N'or i=='n':
+            y+=1
+            print(i,(x,y))
+        elif i=='S'or i=='s':
+            y-=1
+            print(i,(x,y)) 
+travel('sw!n',2,2)
+s (2, 1)
+w (1, 1)
+n (1, 2)
+#问题四
+def swip_swap(a,a1,a2):
+    '互换字符串中的两个指定字符的位置'
+    
+    a=a.replace(a1,'.')
+    a=a.replace(a2,a1)
+    a=a.replace('.',a2)
+    print(a)
+ swip_swap('float','f','a')
+aloft
+# 问题5
+def cal_str(string):
+    str2 = ""
+    number = 0
+    if len(string) == 0:
+        return
+    for index in range(len(string)):
+        if index != 0:
+            if string[index] != string[index - 1]:
+                str2 = str2 + str(number)
+                number = 1
+                str2 = str2 + string[index]
+            else:
+                number = number + 1
+            continue
+        number = number + 1
+        str2 = str2 + string[index]
+    str2 = str2 + str(number)
+    return str2
+cal_str('aaa')
+'a3'
+#问题六
+def mode_digit(a):
+    '找出一个数中出现频率最高的数字'
+    b=str(a)
+    c= ''
+    max=0
+    count1=0
+    for i in range(len(b)):
+        # 主循环体
+        if b[i] in c:  
+            continue
+        count = 0  
+        for j in range(i,len(b)): 
+            if b[i] == b[j]:
+                count += 1
+            if count1<count:
+                count1=count
+                max=b[i]
+    print(max)
+mode_digit(1211232231)
+2
