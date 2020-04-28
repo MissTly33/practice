@@ -1,0 +1,159 @@
+while True:
+    x=input('请输入一个名字（按Q退出）:')
+    if x=='Q':
+        break
+    print('输入的名字是：',x)
+print('程序结束')
+
+#while循坏和else的搭配
+s=input('请输入任意语句（不包含#）：')
+i=0
+while i<len(s):
+    if s[i]=='#':
+        s='循环失败'
+        break
+    print('循环执行中:'+s[i])
+    i+=1
+else:
+    s='循环正常结束'
+print(s)
+
+#课堂练习：倒背如流  解法2
+s=input('请输入一段文本:')
+i=-1
+while i>=-len(s):
+    print(s[i],end='')#连续打印
+    i-=1
+
+#从一个小游戏开始
+#给十次机会
+#随机分数
+import random
+print('这是一个猜分数的小游戏')
+score=random.randint(60,100)
+i=1
+guess=0
+while guess!=score:
+    if i>10:
+        break
+    if i==1:
+        guess=int(input("猜猜你的课堂测试考了几分？"))
+    else:
+        guess=int(input("再来一次，猜对才能走哦："))
+    if guess>score:
+        print('这么高，你是认真的吗?')
+    if guess<score:
+        print("太低了，自信一点")
+    i+=1
+else:
+    print("答对了，你很有自知之明")
+    print("猜中了也不会给你加分！")
+print("你是"+str(score)+"分")
+print("游戏结束，等发卷子吧")
+
+#寻找最大值
+maxV=-1
+print('寻找最大值',maxV)
+for i in[9,41,12,74,15]:
+    if i>maxV:
+        maxV=i
+    print('当前计数为',maxV,'当前迭代数为',i)
+print('结束，最后的计数为',maxV)
+
+#寻找最小值(不知道数组中数的大小，无法判断)
+minV=None
+print('寻找最小值',minV)
+for i in[9,41,12,74,15]:
+    if minV is None:
+        minV=i
+    elif i<minV:
+        minV=i
+    print('当前最小为',minV,'当前迭代数为',i)
+print('结束，最小值为',minV)
+
+#循环求和
+start=0
+print('起始值',start)
+for i in[9,41,12,3,74,15]:
+    start+=1
+    print('当前计数为',start)
+print('结束，最后计数为',start)
+
+#循环求平均值
+start=0
+n=0
+print('起始值',start,n)
+for i in[9,41,12,3,74,15]:
+    n+=1
+    start+=i
+    print('当前均值为','%.2f'%(start/n))
+print('结束，最后均值为','%.2f'%(start/n))
+
+#循环过滤，过滤大于20的值
+print('开始')
+for i in[9,41,12,3,74,15]:
+    if i>20:
+        print('这个值太大:',i)
+print('结束')
+
+#寻找金矿
+found=False
+n=1
+print("搜索开始")
+for i in['银','铁','铜','锡','金','铝','黄铜']:
+    if i=='金':
+        found=True
+        print('找到金子了')
+        break
+    n+=1
+if found:
+    print('本次探矿成功，有金子的矿洞为',n)
+else:
+    print('本次没找到金子')
+
+#测试range函数
+kd=['银','铁','铜','锡','金','铝','黄铜']
+for i in range(0,len(kd)):
+        if kd[i]=='金':
+            break
+print('金子在第',i+1,'矿洞')
+
+#测试zip函数
+day=['周一','周二','周三']
+fruit=['苹果','梨子','桃子']
+drink=['豆浆','牛奶','米酒']
+for x,y,z in zip(day,fruit,drink):
+    print('这'+'我吃了'+y+'还喝了'+z)
+
+#tlx公主菜单
+day=['昨天','今天']
+food=['皇家奥利奥牛奶土豆泥，葱油拌面','清真拉面，失败的双皮奶']
+for x,y in zip(day,food):
+    print(x+'tlx吃了'+y)
+
+#金融复利
+m=float(input('请输入您每月计划存入的钱数：'))
+s=0
+for i in range(6):
+    s=(s+m)*(1+0.05/12)#年利率为5%0.05/12月利率
+print('六个月后你的账户总额为:','%.2f'%s)
+
+#课堂练习：整数求和
+m=int(input('请输入一个0-1000的整数：'))
+if m>1000 or m<0:
+    print('输入有误')
+else:
+    qw=0
+    bw=0
+    sw=0
+    if m==1000:
+        qw=1
+        m=m%1000
+    if m>99:
+        bw=m//100
+        m=m%100
+    if m>9:
+        sw=m//10
+        m=m%10
+    s=qw+bw+sw+m
+    print('该整数各位数字之和为',s)
