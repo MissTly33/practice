@@ -1,0 +1,84 @@
+def print_lyrics(name):
+    '读入点歌人，打印卖报歌歌词'
+    
+    print('以下为'+name+'点播：')
+    print('啦啦啦！啦啦啦！')
+    print('我是卖报的小当家。')
+
+def print_lyrics():
+    '打印卖报歌歌词'
+    
+    print('啦啦啦！啦啦啦！')
+    print('我是卖报的小当家。')
+
+#消息
+def display_message():
+    '打印本周学习内容'
+    
+    print('本周我们学习了Python里的里的函数')
+
+#喜欢的图书
+def favorite_book(title):
+    '读入书名，打印最喜欢的书'
+    
+    print('One of my favorite books is'+title+'.')
+
+#显示宠物的信息
+def describe_pet(pet_name,animal_type='狗'):
+    '读入宠物种类和名字，打印输入'
+    
+    print("\n我有一只"+animal_type+'.')
+    print('我的'+animal_type+'的名字是'+pet_name+'.')
+
+#多国语言问候
+def greet(lan):
+    '按读入信息选择问候语言并返回'
+    
+    if lan=='cn':
+        return'你好'
+    if lan=='fr':
+        return'Bonjour'
+    else:
+        return'Hello'
+
+#返回整洁的姓名
+def get_formatted_name(last_name,first_name,middle_name):
+    '打印姓名，中间名缺省为空'
+    
+    full_name=last_name+''+middle_name+''+first_name
+    return full_name.title()
+
+#练习题3-4
+def make_shirt(size,text='I love Phython'):
+    '打印T恤尺码和字样'
+    
+    print('T恤的尺码位:'+size+'上面的字样为:'+text)
+
+#练习题7
+def make_album(author,album,music_key,music_numbers=''):
+    '创建描述音乐专辑的字典，接受歌手名和专辑名'
+
+    make_album={'author':author,'work':album}
+    if music_numbers:
+        make_album['numbers']=music_numbers
+    if music_key:
+        make_album['key']=music_key
+    return make_album
+
+#；练习题8
+while True:
+    print('请按照提示输入信息，按"Q"退出')
+    author=input('请输入作者名')
+    if author=='Q':
+          break
+    album=input('请输入专辑名')
+    if album=='Q':
+          break
+    number=input('请输入作品数量')
+    if number=='Q':
+          break
+    key=input('请输入星级')
+    if key=='Q':
+          break
+    album_infor=make_album(author,album,number,key)
+    print(album_infor)
