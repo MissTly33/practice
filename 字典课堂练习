@@ -1,0 +1,89 @@
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    if name not in counts:
+        counts[name]=1
+    else:
+        counts[name]+=1
+print(counts)
+
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+print(counts)
+
+#计数模式
+counts=dict()
+print('请输入英文：')
+#line=input('')
+line=open()#打开文件
+words=line.read().split()#read可忽略换行符，读成一行，否则不能用换行符分隔split把行拆分成单词
+print('单词是:',words)
+for word in words:
+    counts[word]=counts.get(word,0)+1
+print('计数为：',counts)
+
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+del counts['Jim']
+print(counts)
+
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+counts.clear()
+print(counts)
+
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+print(counts)
+print(counts.keys())
+
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+print(counts)
+print(counts.values())
+
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+print(counts)
+
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+for key in counts:
+    print(key,counts[key])
+
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+for key,value in counts.items():
+    print(key,value)
+
+#寻找最大值
+counts=dict()
+line=open()#打开文件
+words=line.read().split()#read可忽略换行符，读成一行，否则不能用换行符分隔split把行拆分成单词
+print('单词是:',words)
+for word in words:
+    counts[word]=counts.get(word,0)+1
+maxcount=None
+maxword=None
+for word,count in counts.items():
+    if maxcount is None or count>maxcount:
+        maxword=word
+        maxcount=count
+print(maxword,maxcount)
+print(counts.items())
