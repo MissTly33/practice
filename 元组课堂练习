@@ -1,0 +1,70 @@
+x,y=4,'Anna'#元组，未命名
+
+('Jones','Sally')>('Adames','Sam')#比较的是字母
+
+#元组按标签排序
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+sorted(counts.items())#没有改变元组顺序，与sort不同
+
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+sorted(counts.items())#没有改变元组顺序，与sort不同
+for i in sorted(counts.items()):
+    print(i) 
+
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+sorted(counts.items())#没有改变元组顺序，与sort不同
+for i,j in sorted(counts.items()):
+    print(i,j) 
+
+#元组按值排序
+counts=dict()
+names=['Jim','Li','Mei','Li','Mei']
+for name in names:
+    counts[name]=counts.get(name,0)+1
+sorted(counts.items())#没有改变元组顺序，与sort不同
+temp=[]
+for k,v in counts.items():
+    temp.append((v,k))
+for i,j in sorted(temp,reverse=True ):
+    print(i,j)  
+
+#最常见的十个词
+counts=dict()
+line=open()
+world=line.read().split()
+list=[]
+for word in word:
+    counts[word]=counts.get(word,0)+1
+temp=[]
+for k,v in counts.items():
+    temp.append((v,k))
+temp=sorted(temp,reverse=True)
+for v,k in temp[:10]:#打印1-9
+    print(k,v)
+
+#最常见的十个词
+counts=dict()
+line=open()
+world=line.read().split()
+list=[]
+for word in word:
+    counts[word]=counts.get(word,0)+1
+print(sorted[(v,k)for k,v in counts.items(),resveres=true][:10])
+
+test_grid=[[1,2,3,4,5,6],
+           [0,2,4,6,8,10],
+           [3,4,5,6,7,8]
+          ]
+rows=len(test_grid)#行数
+cols=len(test_grid[0])#列数
+[[0]*cols for row in range(rows)]
+
