@@ -1,0 +1,65 @@
+#洗牌发牌
+import random 
+import time
+play1=[]
+play2=[]
+play3=[]
+play4=[]
+a=input('是否发牌（y表示发牌，n表示不发牌）')
+if a=='y':
+    #产生牌的花色
+    def get_color(n):
+        if(n>=0 and n<=12) :
+            return "club"
+        elif(n>=13 and n<=25) :
+            return "diamond"
+        elif(n>=26 and n<=38) :
+            return "heart"
+        elif(n>=39 and n<=51) :
+            return "spade"
+    #产生牌的值
+    def get_value(n):
+        if n==0 or n==13 or n==26 or n==39:
+            return "A"
+        if n==10 or n==23 or n== 36 or n==49:
+            return "K"
+        if n==11 or n==24 or n==37 or n==50:
+            return "Q"
+        if n==12 or n==25 or n==38 or n==51:
+            return "J"
+        else:
+            return n%13
+    #打乱牌的顺序
+    def get_poker(n):
+        random.shuffle(n) 
+        return n
+    time.sleep(5)
+    print('洗牌中...')
+    def get_puk():
+        list=[]
+        for i in range(0,52):
+            list.append(i)
+        list=get_poker(list)
+        play1=[]
+        play2=[]
+        play3=[]
+        play4=[]
+        for i in range(0,52):
+            if i<13:
+                play1.append(get_color(list[i])+str(get_value(list[i])))
+            elif i<26:           
+                play2.append(get_color(list[i])+str(get_value(list[i])))
+            if i<39:
+                play3.append(get_color(list[i])+str(get_value(list[i])))
+            else:
+                play4.append(get_color(list[i])+str(get_value(list[i])))
+        time.sleep(5)
+        print('发牌中...')
+        print(list)
+        print('玩家1',play1)
+        print('玩家2',play2)
+        print('玩家3',play3)
+        print('玩家4',play4)
+else:
+    print('暂时不能发牌')
+get_puk()
